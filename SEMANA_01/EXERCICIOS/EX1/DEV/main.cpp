@@ -123,14 +123,41 @@ int main(){
 A primeira função deve retornar a direção de maior distância ("Direita", "Esquerda", "Frente", "Tras") e a segunda função deve retornar esta maior distância.
 */
 
-int dirMaiorDist(int Vetor){
-    
+/*
+string dirMaiorDist(int *Vetor){
+    string direcao;
+    int index = 0;
+    for (int i=1; i<4; i++){
+        if (Vetor[index] < Vetor[i])
+            index = i;
+    }
+
+    switch (index) {
+        case 0:
+            direcao = "Direita";
+            break;
+        case 1:
+            direcao = "Esquerda";
+            break;
+        case 2:
+            direcao = "Frente";
+            break;
+        case 3:
+            direcao = "Tras";
+            break;
+    }
+    return direcao;
 }
 
-INSIRA_TIPO maiorDist(INSIRA_TIPO Vetor){
-  // Escreva a função aqui
+float maiorDist(int *Vetor){
+    float elemento_distancia = Vetor[0];
+    for (int i=1; i<4; i++) {
+        if (elemento_distancia < Vetor[i])
+            elemento_distancia = Vetor[i];
+    }
+    return elemento_distancia;
 }
-
+*/
 
 /*
 // Descomente a função main abaixo para testar o exercício 4
@@ -186,28 +213,29 @@ int main(){
 
 // 5 - Faça uma função que pergunta ao usuário se ele deseja continuar o mapeamento e retorna verdadeiro ou falso
 
-
+/*
 bool continuar(){
   bool continua;
   cout << "Deseja continuar o mapeamento? 0 - Sim, 1 - Nao" << endl;
   cin >> continua;
   return continua;
 }
-
+*/
 
 // Descomente a função main abaixo para testar o exercício 5
-
+/*
 int main(){
   int parar = 0;
 
   while (parar == 0){
     parar = continuar();
   }
+  */
   //A função deve perguntar: "Digite 1 para parar o mapeamento!"
   //Se o usuário digitar 1, deve sair do loop while declarado acima
   // Em caso contrário, continua no loop acima e pergunta novamente
-  return 0;
-}
+  //return 0;
+//}
 
 
 // ----------------------------------------------------------

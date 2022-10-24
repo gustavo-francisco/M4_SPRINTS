@@ -1,0 +1,3 @@
+C:/Users/Inteli/Documents/GitHub/M4_SPRINTS/SEMANA_01/EXERCICIOS/EX1/DEV/cmake-build-debug/CMakeFiles/DEV.dir
+C:/Users/Inteli/Documents/GitHub/M4_SPRINTS/SEMANA_01/EXERCICIOS/EX1/DEV/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Inteli/Documents/GitHub/M4_SPRINTS/SEMANA_01/EXERCICIOS/EX1/DEV/cmake-build-debug/CMakeFiles/rebuild_cache.dir
