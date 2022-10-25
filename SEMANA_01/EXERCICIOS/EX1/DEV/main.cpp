@@ -57,13 +57,18 @@ int main(){
 Evite também que, por acidente, um valor seja escrito em uma área de memória fora do vetor
 */
 
-/*
-INSIRA_TIPO insereVetor(INSIRA_TIPO elemento, INSIRA_TIPO valorMax, INSIRA_TIPO lastPos, INSIRA_TIPO Vetor){
-  // Escreva a função aqui
-}
-*/
 
-/*
+void insereVetor(int elemento, int valorMax, int lastPos, int* Vetor){
+    if (lastPos < (valorMax - 1)){
+        Vetor[lastPos + 1] = elemento;
+    }
+    else{
+        cout << "Erro: valorMax: " << valorMax << " lastPos + 1 (indice): " << lastPos + 1 << endl;
+    }
+}
+
+
+
 // Descomente a função main abaixo para testar o exercício 3
 int main(){
   int valorMax = 10;
@@ -114,7 +119,7 @@ int main(){
   cout << Numbers[8] << endl; // valor esperado: 1
   cout << Numbers[9] << endl; // valor esperado: 0
 }
-*/
+
 
 // ----------------------------------------------------------
 
