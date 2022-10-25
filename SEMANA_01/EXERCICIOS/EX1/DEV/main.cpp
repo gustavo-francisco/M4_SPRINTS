@@ -5,16 +5,16 @@ using namespace std;
 
 
 //1 -  Faça uma função que recebe uma certa medida e ajusta ela percentualmente entre dois valores mínimo e máximo e retorna esse valor
-/*
+
 float converteSensor(float medida, float min, float max){
     float para_divisao = max - min;
     float normalizado = medida - min;
     float divisao = normalizado/para_divisao;
     return divisao;
 }
-*/
 
-/*int main(){
+
+int primeiro(){
   cout << "Teste Ex 1" << endl;
 	cout << converteSensor(100,100,400) << endl;
   //valor esperado: 0
@@ -25,7 +25,6 @@ float converteSensor(float medida, float min, float max){
 	cout << converteSensor(250,100,400) << endl;
   //valor esperado: 0.5
 }
- */
 
 
 // ----------------------------------------------------------
@@ -33,22 +32,18 @@ float converteSensor(float medida, float min, float max){
 /*
 2 - Faça uma função que simule a leitura de um sensor lendo o valor do teclado ao final a função retorna este valor
 */
-/*
+
 int leComando(){
     int teclado;
     cin >> teclado;
     return teclado;
 }
 
-
-
-// Descomente a função main abaixo para testar o exercício 2
-int main(){
+int segundo(){
   cout << "Digite o Comando (0 ou 1):";
 	int cmd = leComando();
 	cout << "Comando Recebido: " << cmd << endl;
 }
-*/
 
 // ----------------------------------------------------------
 
@@ -70,7 +65,7 @@ void insereVetor(int elemento, int valorMax, int lastPos, int* Vetor){
 
 
 // Descomente a função main abaixo para testar o exercício 3
-int main(){
+int terceiro(){
   int valorMax = 10;
   int lastPos = -1;
   int Numbers[valorMax];
@@ -128,7 +123,6 @@ int main(){
 A primeira função deve retornar a direção de maior distância ("Direita", "Esquerda", "Frente", "Tras") e a segunda função deve retornar esta maior distância.
 */
 
-/*
 string dirMaiorDist(int *Vetor){
     string direcao;
     int index = 0;
@@ -162,11 +156,8 @@ float maiorDist(int *Vetor){
     }
     return elemento_distancia;
 }
-*/
 
-/*
-// Descomente a função main abaixo para testar o exercício 4
-int main(){
+int quarto(){
   //Considere que os valores sempre serão distintos
   //Considere valores de distância inteiros entre 0 e 100
 
@@ -209,38 +200,41 @@ int main(){
   cout << maiorDist(posicoes4) << endl;
   //valor esperado: 55
 }
-*/
+
 
 // ----------------------------------------------------------
 
 // 5 - Faça uma função que pergunta ao usuário se ele deseja continuar o mapeamento e retorna verdadeiro ou falso
 
-
-// 5 - Faça uma função que pergunta ao usuário se ele deseja continuar o mapeamento e retorna verdadeiro ou falso
-
-/*
 bool continuar(){
   bool continua;
   cout << "Deseja continuar o mapeamento? 0 - Sim, 1 - Nao" << endl;
   cin >> continua;
   return continua;
 }
-*/
 
-// Descomente a função main abaixo para testar o exercício 5
-/*
-int main(){
+int quinto(){
   int parar = 0;
 
   while (parar == 0){
     parar = continuar();
   }
-  */
+  return 0;
   //A função deve perguntar: "Digite 1 para parar o mapeamento!"
   //Se o usuário digitar 1, deve sair do loop while declarado acima
   // Em caso contrário, continua no loop acima e pergunta novamente
-  //return 0;
-//}
+}
+int main(){
+    primeiro();
+    cout << endl;
+    segundo();
+    cout << endl;
+    terceiro();
+    cout << endl;
+    quarto();
+    cout << endl;
+    quinto();
+}
 
 
 // ----------------------------------------------------------
