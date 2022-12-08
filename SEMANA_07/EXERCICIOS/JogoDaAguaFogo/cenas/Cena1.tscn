@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://mapa/mapa1.png" type="Texture" id=1]
+[ext_resource path="res://cenas/gemaAzul.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cenas/gemaVermelha.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cenas/Agua.tscn" type="PackedScene" id=4]
+[ext_resource path="res://cenas/Fogo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cenas/gemaAzul2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://cenas/gemaAzul3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://cenas/gemaVermelha2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://cenas/gemaVermelha3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/Cena1.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58, 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 42, 3.25 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 44.5, 4.25 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16.5, 22 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6.5, 21.75 )
+
+[node name="Fase 1" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Mapa1" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 392, 292 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 15, 570, 360, 568, 374, 579, 440, 581, 456, 568, 524, 570, 539, 583, 601, 581, 621, 570, 707, 570, 707, 529, 725, 509, 768, 509, 768, 404, 729, 405, 690, 367, 668, 366, 646, 342, 381, 344, 361, 318, 101, 318, 100, 305, 399, 305, 422, 327, 686, 325, 685, 304, 766, 304, 766, 137, 339, 139, 337, 174, 241, 174, 241, 121, 221, 99, 205, 97, 218, 82, 260, 82, 278, 101, 303, 102, 314, 120, 784, 118, 782, 583, 16, 584 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 1, 0 )
+polygon = PoolVector2Array( 13, 581, -1, 582, -1, 0, -1, 0, 783, 3, 783, 116, 768, 116, 766, 18, 15, 19, 14, 141, 115, 143, 115, 184, 152, 185, 152, 216, 151, 221, 400, 221, 401, 186, 538, 186, 582, 221, 681, 225, 680, 257, 579, 257, 560, 242, 13, 243, 16, 371, 94, 370, 95, 382, 14, 384, 14, 407, 206.548, 407, 340, 407, 378, 445, 485, 447, 494, 456, 558, 457, 580, 446, 664, 449, 685, 465, 338, 463, 301, 424, 14, 425, 14, 483, 255, 487, 257, 506, 13, 507 )
+
+[node name="Laguinho Vermelho" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laguinho Vermelho"]
+position = Vector2( 409, 574 )
+shape = SubResource( 1 )
+
+[node name="Laguinho azul" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laguinho azul"]
+position = Vector2( 571, 575.25 )
+shape = SubResource( 2 )
+
+[node name="Laguinho verde" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laguinho verde"]
+position = Vector2( 530, 450.25 )
+shape = SubResource( 3 )
+
+[node name="gemaAzul" parent="." instance=ExtResource( 2 )]
+position = Vector2( 573, 530 )
+
+[node name="gemaAzul2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 732, 283 )
+
+[node name="gemaAzul3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 292, 202 )
+
+[node name="gemaVermelha" parent="." instance=ExtResource( 3 )]
+position = Vector2( 414, 533 )
+
+[node name="gemaVermelha2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 60, 346 )
+
+[node name="gemaVermelha3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 453, 101 )
+
+[node name="portaVermelha" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portaVermelha"]
+position = Vector2( 663.5, 94 )
+shape = SubResource( 4 )
+
+[node name="portaAzul" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portaAzul"]
+position = Vector2( 744.5, 93.25 )
+shape = SubResource( 5 )
+
+[node name="Fogo" parent="portaAzul" instance=ExtResource( 5 )]
+position = Vector2( 125, 541 )
+
+[node name="Agua" parent="portaAzul" instance=ExtResource( 4 )]
+position = Vector2( 75, 541 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="body_entered" from="Laguinho Vermelho" to="portaAzul/Agua" method="_on_Laguinho_Vermelho_body_entered"]
+[connection signal="body_entered" from="Laguinho azul" to="portaAzul/Fogo" method="_on_Laguinho_azul_body_entered"]
+[connection signal="body_entered" from="Laguinho verde" to="portaAzul/Fogo" method="_on_Laguinho_verde_body_entered"]
+[connection signal="body_entered" from="Laguinho verde" to="portaAzul/Agua" method="_on_Laguinho_verde_body_entered"]
+[connection signal="body_entered" from="gemaAzul" to="portaAzul/Agua" method="_on_gemaAzul_body_entered"]
+[connection signal="body_entered" from="gemaAzul2" to="portaAzul/Agua" method="_on_gemaAzul2_body_entered"]
+[connection signal="body_entered" from="gemaAzul3" to="portaAzul/Agua" method="_on_gemaAzul3_body_entered"]
+[connection signal="body_entered" from="gemaVermelha" to="portaAzul/Fogo" method="_on_gemaVermelha_body_entered"]
+[connection signal="body_entered" from="gemaVermelha2" to="portaAzul/Fogo" method="_on_gemaVermelha2_body_entered"]
+[connection signal="body_entered" from="gemaVermelha3" to="portaAzul/Fogo" method="_on_gemaVermelha3_body_entered"]
+[connection signal="body_entered" from="portaVermelha" to="portaAzul/Fogo" method="_on_portaVermelha_body_entered"]
+[connection signal="body_entered" from="portaAzul" to="portaAzul/Agua" method="_on_portaAzul_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
